@@ -1,0 +1,27 @@
+
+{
+    "name": "advscript-syntax-highlight",
+    "version": "0.0.1",
+    "publisher": "2dgames.jp",
+    "engines": {
+        "vscode": "^1.33.1"
+    },
+    "contributes": {
+        "languages": [{
+            "id": "adv",
+            "extensions": [".adv"]
+        }],
+        "grammars": [{
+            "language": "adv",
+            "scopeName": "source.adv",
+            "path": "./syntaxes/adv.tmLanguage.json",
+            "tokenTypes": {
+                "entity.name.namespace.adv": "other"
+            }
+        }]
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/syun77/VSCodeADVScriptExtension.git"
+    }
+}
