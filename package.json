@@ -2,7 +2,7 @@
 {
     "name": "advscript-syntax-highlight",
     "version": "0.0.1",
-    "publisher": "2dgames.jp",
+    "publisher": "syun77",
     "engines": {
         "vscode": "^1.33.1"
     },

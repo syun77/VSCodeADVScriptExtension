@@ -1,17 +1,53 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "adv",
+	"foldingStartMarker": "\\{\\",
+	"foldingStopMarker": "\\}\\",
 	"patterns": [{
 		"include": "#keywords"
+	}, {
+		"include": "#var_declaration"
+	}, {
+		"include": "#comment"
+	}, {
+		"include": "#strings"
 	}],
 	"repository": {
 		"keywords": {
-			"patterns": [
-				{
-					"name": "keyword.control",
-					"match": "\\b(def|while|true|false|select|if|elif|else|call|return|break)\\b"
-				}
-			]
+			"patterns": [{
+				"name": "keyword.control",
+				"match": "\\b(def|while|select|if|elif|else|call|return|break)\\b"
+			}, {
+				"name": "constant.numeric",
+				"match": "\\b(\\d+)\\b"
+			}, {
+				"name": "constant.character",
+				"match": "\\b(true|false)\\b"
+			}]
+		},
+		"var_declaration": {
+			"patterns": [{
+				"name": "entity.name.variable.var",
+				"match": "\\$[_A-Za-z\\d]+"
+			}, {
+				"name": "entity.name.variable.bit",
+				"match": "\\%[_A-Za-z\\d]+"
+			}]
+		},
+		"comment": {
+			"patterns": [{
+				"name": "comment.line.adv",
+				"match": "//.+"
+			}, {
+				"name": "comment.block.adv",
+				"begin": "\\/\\*",
+				"end": "\\*\\/"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.adv",
+			"begin": "\"",
+			"end": "\""
 		}
 	},
 	"scopeName": "source.adv"
