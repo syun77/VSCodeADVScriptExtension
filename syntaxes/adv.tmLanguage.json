@@ -11,18 +11,23 @@
 		"include": "#comment"
 	}, {
 		"include": "#strings"
+	}, {
+		"include": "#label"
 	}],
 	"repository": {
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control",
-				"match": "\\b(def|while|select|if|elif|else|call|return|break)\\b"
+				"match": "\\b(def|while|select|if|elif|else|call|return|break|goto)\\b"
 			}, {
 				"name": "constant.numeric",
 				"match": "\\b(\\d+)\\b"
 			}, {
 				"name": "constant.character",
 				"match": "\\b(true|false)\\b"
+			}, {
+				"name": "keyword.operator",
+				"match": "\\b(\\+|\\-|\\*|\\/|\\+=\\-=\\*=\\/=)\\b"
 			}]
 		},
 		"var_declaration": {
@@ -45,9 +50,22 @@
 			}]
 		},
 		"strings": {
-			"name": "string.quoted.double.adv",
-			"begin": "\"",
-			"end": "\""
+			"patterns": [
+				{
+					"name": "string.quoted.double.adv",
+					"begin": "\"",
+					"end": "\""
+				},
+				{
+					"name": "constant.character.adv",
+					"begin": "@\"",
+					"end": "\""
+				}
+			]
+		},
+		"label": {
+			"name": "storage.type.adv",
+			"match": "^[_A-Za-z][_A-Za-z\\d]+:"
 		}
 	},
 	"scopeName": "source.adv"

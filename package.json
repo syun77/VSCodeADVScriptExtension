@@ -1,11 +1,14 @@
 
 {
     "name": "advscript-syntax-highlight",
-    "version": "0.0.2",
+    "version": "0.0.4",
     "publisher": "syun77",
     "engines": {
         "vscode": "^1.33.1"
     },
+    "categories": [
+		"Snippets"
+	],
     "contributes": {
         "languages": [{
             "id": "adv",
@@ -18,7 +21,11 @@
             "tokenTypes": {
                 "entity.name.namespace.adv": "other"
             }
-        }]
+        }],
+        "snippets": [{
+			"language": "adv",
+			"path": "./snippets/snippets.json"
+		}]
     },
     "repository": {
         "type": "git",
